@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2e424d;
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0;
+}
+h2{
+  margin: 10px 0 20px;
+  text-align: center;
+
+}
+.container{
+  background-color: #23235b;
+  box-shadow: 0px 2px 10px  rgba(255, 255, 255, 0.2);
+  padding: 20px ;
+  width: 350px;
+  max-width: 100%;
+
+}
+
+.result-container{
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 12px 10px;
+  height: 50px;
+  width: 100%;
+
+
+}
+
+.result-container #result{
+  word-wrap: break-word;
+  max-width: calc(100% - 40px);
+}
+
+.result-container .btn{
+position: absolute;
+top: 5px;
+right: 5px;  
+width: 40px;
+height: 40px;
+font-size: 20px;
+
+
+
+}
+
+.btn{
+  border: none;
+  background-color: #3b3b98;
+  color: white;
+  font-size: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+
+}
+
+.btn-large{
+  display: block;
+  width: 100%;
+}
+
+.btn:hover{
+  background: #2e424d;
+}
+
+
+.setting{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  
+}
+
+.title span{
+  --total: calc(var(--duration)
+  + var(--delay));
+  position: relative;
+  display: block;
+  color: transparent;
+  overflow: hidden;
+  animation: revealText 1s
+  var(--total) forwards;
+}
+.title span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: #bb93fc;
+  animation: 
+  rollIn var(--duration)
+  var(--delay) forwards,
+  rollOut var(--duration)
+  var(--total) forwards;
+}
+
+.title span:nth-child(2)::after{
+  border-top: 3px solid #896ab9;
+}
+@keyframes revealText{
+  to{
+      color: #fff;
+  }
+}
+@keyframes rollIn{
+  from{
+      transform: scaleX(0);
+  }
+  to{
+      transform: scaleX(1);
+  }
+
+}
+@keyframes rollOut{
+  from{
+      transform: translateX(0);
+  }
+  to{
+      transform: translateX(105%);
+  }
+}
+
+
